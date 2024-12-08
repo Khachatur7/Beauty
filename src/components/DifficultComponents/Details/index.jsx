@@ -13,7 +13,7 @@ const Details = ({ type, img }) => {
 
   return (
     <div className="details_component">
-      {(type == "expert" || !type) && (
+      {(type === "expert" || !type) && (
         <>
           <div className="details_component_main_content">
             <div className="details_img">
@@ -29,18 +29,18 @@ const Details = ({ type, img }) => {
               <Rating text={"(1 отзыв)"} />
             </div>
           </div>
-          {img == "pencil" && (
+          {img === "pencil" && (
             <img src={pencilLogo} alt="" className="pencilLogo" />
           )}
           {
-            img == "i" && 
+            img === "i" && 
             <button className="more_about_expert" onClick={()=>navigate("/expert")}>
             <img src={i} alt="" />
           </button>
           }
         </>
       )}
-      {(type == "time") && (
+      {(type === "time") && (
         <>
           <div className="details_component_main_content">
             <div className="details_img">
@@ -55,12 +55,12 @@ const Details = ({ type, img }) => {
               </div>
             </div>
           </div>
-          {img == "pencil" && (
+          {img === "pencil" && (
             <img src={pencilLogo} alt="" className="pencilLogo" />
           )}
         </>
       )}
-       { type == "tips" && (
+       { type === "tips" && (
         <>
           <div className="details_component_main_content">
             <div className="details_img">

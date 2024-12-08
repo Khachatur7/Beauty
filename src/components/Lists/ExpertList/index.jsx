@@ -31,13 +31,13 @@ const ExpertList = () => {
   return (
     <div className="expert_list">
       <ExpertComponent 
-      active={choosenExpert == ""}
+      active={choosenExpert === ""}
       onClick={()=>setChoosenExpert("")}/>
       {experts.map((expert) => {
         return (
           <ExpertComponent
             expert={expert}
-            active={choosenExpert == expert.name}
+            active={choosenExpert === expert.name}
             onClick={()=>setChoosenExpert(expert.name)}
             MoreAbout={()=>navigate(expert.navigate)}
           />

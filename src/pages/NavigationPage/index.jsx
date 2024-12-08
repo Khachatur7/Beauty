@@ -45,7 +45,7 @@ const NavigationPage = () => {
         />
         <div className="nav_page_item">
           {navBlockNames.slice(1, 3).map((el) => {
-            if (el.text == "Акции") {
+            if (el.text === "Акции") {
               return (
                 <NavBlock
                   text={el.text}

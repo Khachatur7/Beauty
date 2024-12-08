@@ -11,7 +11,7 @@ const ServiceComponent = ({
   chosenService,
   img
 }) => {
-  const active = chosenService == title;
+  const active = chosenService === title;
   const ChooseService = () => {
     if (active) {
       setActiveService("");
@@ -36,7 +36,7 @@ const ServiceComponent = ({
       {setActiveService && (
         <CircleButton onClick={ChooseService} active={active} />
       )}
-      {(!setActiveService && img=="pencil") && <img src={pencilLogo} alt="pencilLogo" />}
+      {(!setActiveService && img==="pencil") && <img src={pencilLogo} alt="pencilLogo" />}
     </div>
   );
 };

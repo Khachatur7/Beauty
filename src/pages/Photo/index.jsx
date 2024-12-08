@@ -68,7 +68,7 @@ const PhotoPage = () => {
         {photos.map((p) => {
           return (
             <div className="photo">
-              <img src={p} alt="photo" />
+              <img src={p} />
             </div>
           );
         })}

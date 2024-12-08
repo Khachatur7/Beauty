@@ -56,10 +56,10 @@ const LeaveReview = () => {
           </div>
         </div>
       </div>
-      {(tipsType == bttnsText[0] || tipsType == bttnsText[1]) && (
+      {(tipsType === bttnsText[0] || tipsType === bttnsText[1]) && (
         <Details type={"tips"} />
       )}
-      {tipsType == bttnsText[3] && (
+      {tipsType === bttnsText[3] && (
         <>
           <div className="tips_input">
             <svg

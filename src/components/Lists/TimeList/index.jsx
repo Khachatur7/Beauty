@@ -15,7 +15,7 @@ const TimeList = ({ title }) => {
           return (
             <TimeBttn
               text={el}
-              active={active == el}
+              active={active === el}
               onClick={() => setActive(el)}
             />
           );
