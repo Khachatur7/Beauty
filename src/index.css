@@ -61,3 +61,44 @@ input {
   background: var(--page-bg);
   min-height: 100vh;
 }
+
+
+@media (max-width:370px) {
+  :root{
+    --def-padding: 7px;
+    --another-padding: 12px;
+    --width: 360px;
+  }
+.promotion_component,
+  .navigaion_block {
+    width: 165px !important;
+  }
+  .promotion_component{
+    height: auto !important;
+  }
+  .contacts{
+    width: 98% !important;
+  }
+
+  .tips_bttn {
+    width: 75px !important;
+    height: 55px !important;
+  }
+
+  .photo_list{
+    gap: 5px !important
+  }
+
+  .photo img{
+    width: 92%;
+  }
+  .phone,
+.grafic{
+width: 170px !important;
+}
+
+.map img{
+width: 97%;
+border-radius: 20px;
+}
+}
