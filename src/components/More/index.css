@@ -1,5 +1,6 @@
 .more_popup {
   width: 80%;
+  max-width: 370px;
   max-height: 600px;
   position: fixed;
   top: 10px;
@@ -8,6 +9,7 @@
   padding: var(--def-padding) var(--another-padding) 55px var(--another-padding);
   border-radius: 15px;
   overflow-y: auto;
+  box-shadow: 0px 0px 5px  115px var(--gray);
 }
 
 .more_popup::-webkit-scrollbar {

@@ -12,7 +12,8 @@ import { useNavigate } from "react-router-dom";
 const LeaveReview = () => {
   const bttnsText = ["50 ₽", "100 ₽", "Без чаевых", "Своя сумма"];
   const [tipsType, setTipsType] = useState("");
-  const navigate = useNavigate()
+  const [starsCount, setStarsCount] = useState(0);
+  const navigate = useNavigate();
   return (
     <div className="leave_review_page page_bg">
       <GoToBackArrow />
@@ -30,11 +31,14 @@ const LeaveReview = () => {
             </div>
           </div>
           <div className="send_review_stars">
-            <StarSVG />
-            <StarSVG />
-            <StarSVG />
-            <StarSVG />
-            <StarSVG />
+            {[1, 2, 3, 4, 5].map((s) => {
+              return (
+                <StarSVG
+                  path={starsCount >= s ? "#f5c926" : "#efefef"}
+                  OnClick={() => setStarsCount(s)}
+                />
+              );
+            })}
           </div>
         </div>
         <TextArea placeholder={"Напишите отзыв"} />
@@ -78,7 +82,7 @@ const LeaveReview = () => {
           </div>
         </>
       )}
-      <Button onClick={()=>navigate("/")}>Отправить</Button>
+      <Button onClick={() => navigate("/")}>Отправить</Button>
     </div>
   );
 };

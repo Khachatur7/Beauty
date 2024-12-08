@@ -68,6 +68,14 @@
   overflow: hidden;
 }
 
+.photos_column{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
 .photo_list .photo img {
   border-radius: 14px;
   border: 0.67px solid #eeeeee;

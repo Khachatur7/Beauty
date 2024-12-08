@@ -13,7 +13,7 @@ import { useState } from "react";
 
 const PhotoPage = () => {
   const [active, setActive] = useState("");
-  const [closeBttnsList,setCloseBttnsList] = useState(false);
+  const [closeBttnsList, setCloseBttnsList] = useState(false);
   const bttns = [
     "Губы",
     "Хирургия",
@@ -23,7 +23,7 @@ const PhotoPage = () => {
     "Ботулинотерпия",
   ];
 
-  const photos = [
+  const photosOne = [
     photo_one,
     photo_two,
     photo_three,
@@ -31,15 +31,23 @@ const PhotoPage = () => {
     photo_five,
     photo_six,
   ];
+  const photosTwo = [photo_one, photo_two, photo_three];
+
+  const photosThree = [photo_one, photo_two];
 
   return (
     <div className="photo_page page_bg">
       <GoToBackArrow />
-      <div className={`category_bttn_list ${closeBttnsList?"hide_category_bttns_list":""}`}>
+      <div
+        className={`category_bttn_list ${
+          closeBttnsList ? "hide_category_bttns_list" : ""
+        }`}
+      >
         <div className="category_bttn_line">
           {bttns.slice(0, 3).map((bttn) => {
             return (
               <CategoryBttn
+                key={bttn}
                 onClick={() => setActive(bttn)}
                 active={bttn === active}
               >
@@ -47,7 +55,10 @@ const PhotoPage = () => {
               </CategoryBttn>
             );
           })}
-          <button className="hide_bttns_bttn" onClick={()=>setCloseBttnsList(!closeBttnsList)}>
+          <button
+            className="hide_bttns_bttn"
+            onClick={() => setCloseBttnsList(!closeBttnsList)}
+          >
             <img src={arrow} alt="arrow" />
           </button>
         </div>
@@ -55,6 +66,7 @@ const PhotoPage = () => {
           {bttns.slice(3, bttns.length).map((bttn) => {
             return (
               <CategoryBttn
+                key={bttn}
                 onClick={() => setActive(bttn)}
                 active={bttn === active}
               >
@@ -65,13 +77,64 @@ const PhotoPage = () => {
         </div>
       </div>
       <div className="photo_list">
-        {photos.map((p) => {
-          return (
-            <div className="photo">
-              <img src={p} alt="" />
-            </div>
-          );
-        })}
+        <div className="photos_column">
+          {(active === "Губы" || !active) &&
+            photosOne.slice(0, Math.ceil(photosOne.length / 2)).map((p) => {
+              return (
+                <div className="photo" key={p}>
+                  <img src={p} alt="" />
+                </div>
+              );
+            })}
+          {active === "Хирургия" &&
+            photosTwo.slice(0, Math.ceil(photosTwo.length / 2)).map((p) => {
+              return (
+                <div className="photo" key={p}>
+                  <img src={p} alt="" />
+                </div>
+              );
+            })}
+          {active === "Пластика" &&
+            photosThree.slice(0, Math.ceil(photosThree.length / 2)).map((p) => {
+              return (
+                <div className="photo" key={p}>
+                  <img src={p} alt="" />
+                </div>
+              );
+            })}
+        </div>
+        <div className="photos_column">
+          {(active === "Губы" || !active) &&
+            photosOne
+              .slice(Math.floor(photosOne.length / 2), photosOne.length)
+              .map((p) => {
+                return (
+                  <div className="photo" key={p}>
+                    <img src={p} alt="" />
+                  </div>
+                );
+              })}
+          {active === "Хирургия" &&
+            photosTwo
+              .slice(Math.floor(photosTwo.length / 2), photosTwo.length)
+              .map((p) => {
+                return (
+                  <div className="photo" key={p}>
+                    <img src={p} alt="" />
+                  </div>
+                );
+              })}
+          {active === "Пластика" &&
+            photosThree
+              .slice(Math.floor(photosThree.length / 2), photosThree.length)
+              .map((p) => {
+                return (
+                  <div className="photo" key={p}>
+                    <img src={p} alt="" />
+                  </div>
+                );
+              })}
+        </div>
       </div>
     </div>
   );

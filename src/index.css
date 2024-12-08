@@ -21,7 +21,7 @@ body {
 
 :root {
   --button--blue-bg: #3375f6;
-  --page-bg: #F8F8F8;
+  --page-bg: #f8f8f8;
   --light-green: #84e8ab;
   --star-bg: #f5c926;
   --pink-bg: #edb4f7;
@@ -62,21 +62,20 @@ input {
   min-height: 100vh;
 }
 
-
-@media (max-width:370px) {
-  :root{
+@media (max-width: 390px) {
+  :root {
     --def-padding: 7px;
     --another-padding: 12px;
     --width: 360px;
   }
-.promotion_component,
+  .promotion_component,
   .navigaion_block {
     width: 165px !important;
   }
-  .promotion_component{
+  .promotion_component {
     height: auto !important;
   }
-  .contacts{
+  .contacts {
     width: 98% !important;
   }
 
@@ -85,20 +84,89 @@ input {
     height: 55px !important;
   }
 
-  .photo_list{
-    gap: 5px !important
+  .photo_list {
+    gap: 5px !important;
   }
 
-  .photo img{
+  .photo img {
     width: 92%;
   }
   .phone,
-.grafic{
-width: 170px !important;
+  .grafic {
+    width: 170px !important;
+  }
+
+  .map img {
+    width: 97%;
+    border-radius: 20px;
+  }
 }
 
-.map img{
-width: 97%;
-border-radius: 20px;
+@media (max-width: 370px) {
+  .navigaion_block {
+    width: 155px !important;
+    padding: 15px var(--def-padding) var(--def-padding) var(--def-padding);
+  }
+
+  :root {
+    --def-padding: 7px;
+    --another-padding: 12px;
+    --width: 335px;
+  }
+  .datas {
+    gap: 10px;
+  }
+  .time_bttn {
+    padding: 11px 18px !important;
 }
+  .promotion_component,
+  .navigaion_block {
+    width: 155px !important;
+  }
+.promotion_title{
+  font-size: 17px  !important;
+}
+
+.promotion_text{
+  font-size: 13px !important; 
+}
+  .datas .numbers,
+  .datas .weekdays {
+    gap: 17px !important;
+  }
+  .tips_bttn {
+    padding: 11px 18px !important;
+    width: 72px !important;
+    height: 52px !important;
+  }
+  .tips_bttn span {
+    font-size: 13px !important;
+  }
+  .photo_list .photo {
+    width: 50%;
+}
+.contacts_blocks {
+  justify-content: space-between !important;
+  gap: 7px !important;
+}
+
+.phone,
+.grafic {
+  width: 160px !important;
+}
+
+
+.expert_about_me p:first-child {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 23px;
+  }
+  
+  .expert_about_me p {
+    font-size: 15px;
+  font-weight: 400;
+  line-height: 23px;
+  margin: 5px;
+  }
+  
 }

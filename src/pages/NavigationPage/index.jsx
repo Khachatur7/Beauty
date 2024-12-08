@@ -48,6 +48,7 @@ const NavigationPage = () => {
             if (el.text === "Акции") {
               return (
                 <NavBlock
+                key={el.text}
                   text={el.text}
                   className={"promotion"}
                   onClick={() => navigate(el.navigate)}
@@ -56,6 +57,7 @@ const NavigationPage = () => {
             } else {
               return (
                 <NavBlock
+                key={el.text}
                   text={el.text}
                   onClick={() => navigate(el.navigate)}
                 />
@@ -66,7 +68,7 @@ const NavigationPage = () => {
         <div className="nav_page_item">
           {navBlockNames.slice(3, 5).map((el) => {
             return (
-              <NavBlock text={el.text} onClick={() => navigate(el.navigate)} />
+              <NavBlock key={el.text} text={el.text} onClick={() => navigate(el.navigate)} />
             );
           })}
         </div>

@@ -41,7 +41,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 30px;
+  gap: 22px;
 }
 
 .weekdays {
@@ -50,7 +50,6 @@
 
 .numbers {
   font-weight: 400;
-  opacity: 0.67;
 }
 
 .calendar .weekday,
@@ -61,4 +60,20 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  transition: .4s ease;
+}
+
+.numbers .day{
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+opacity: 0.67 !important;
+
+}
+
+.calendar .active_cal_day {
+  background: var(--button--blue-bg);
+  color: #ffffff;
+  opacity: 1 !important;
+  padding: 4px 6px;
 }

@@ -8,6 +8,10 @@ import { useState } from "react";
 const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
   const times = ["09:00", "10:30", "11:45", "12:00", "13:00", "13:30"];
   const [activeTimeBttn, setActiveTimeBttn] = useState("");
+  const ChooseExpertWithTime = (time) => {
+    setActiveTimeBttn(time);
+  };
+
   return (
     <>
       {expert ? (
@@ -43,9 +47,13 @@ const ExpertComponent = ({ expert, onClick, active, MoreAbout }) => {
               {times.map((time) => {
                 return (
                   <TimeBttn
+                    key={time}
                     text={time}
-                    onClick={() => setActiveTimeBttn(time)}
-                    active={time === activeTimeBttn}
+                    onClick={() => {
+                      ChooseExpertWithTime(time);
+                      return onClick();
+                    }}
+                    active={time === activeTimeBttn && active}
                   />
                 );
               })}
